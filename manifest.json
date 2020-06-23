@@ -1,0 +1,21 @@
+{
+  "short_name": "Splash.",
+  "name": "Make a Splash",
+  "description": "Colourise this page with an image.",
+  "icons": [
+    {
+      "src": "curv.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "curv.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
