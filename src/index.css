@@ -195,6 +195,7 @@ code {
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #try {

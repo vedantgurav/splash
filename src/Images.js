@@ -28,7 +28,7 @@ export default function Images(props) {
     const {pic} = props;
     return (
       <div className="" id="swatch-image" onClick={() => {processImage(pic)}}>
-        <img src={pic} onDragStart={(event) => {event.preventDefault()}}/>
+        <img src={pic}/>
       </div>
     );
   }
