@@ -25,6 +25,7 @@ code {
 
 .container {
   padding: var(--pagePadding);
+  padding-top: 50px;
 }
 
 #subheading p {
@@ -32,7 +33,6 @@ code {
   font-weight: bold;
   color: var(--secondary);
   line-height: 0.7;
-  margin-top: 10px;
 }
 
 #colored {
