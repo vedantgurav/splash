@@ -140,6 +140,35 @@ $(".swatch-card").click(function() {
   },1000);
 });
 
+$('img').on('dragstart', function(event) { event.preventDefault(); });
+const slider = document.querySelector('.swatch-images');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX);
+  slider.scrollLeft = scrollLeft - walk;
+  console.log(walk);
+});
+
 // Clear
 $("#clear").click(function() {
   $("input")[0].value = null;
