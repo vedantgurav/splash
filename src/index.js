@@ -10,7 +10,7 @@ var colors = {
   backgroundOther: "#f3f3f3",
   colored: "#DF1748"
 }
-var loadAnim;
+var loadAnims = [];
 var animState=false;
 
 // Swatch Card
@@ -74,7 +74,7 @@ $("#content #select").click(function() {
 
 // Selected Image
 $("input").change(function() {
-  setLoadAnim();
+  setloadAnims();
   var file = document.querySelector("input").files[0];
   var reader = new FileReader();
   reader.readAsDataURL(file);
@@ -104,7 +104,7 @@ $("input").change(function() {
 
 // Pick Image
 $(".swatch-images div img").click(function() {
-  setLoadAnim();
+  setloadAnims();
   var image = $(this)[0];
   let mainCanvas = document.createElement("canvas");
   mainCanvas.width = 256;
@@ -195,8 +195,8 @@ $("#clear").click(function() {
 });
 
 // Fullstop Loading
-function setLoadAnim() {
-  loadAnim = setInterval(function() {
+function setloadAnims() {
+  loadAnims.push( setInterval(function() {
     if(animState) {
       $("#fullstop").removeClass("fullstop");
       animState = false;
@@ -204,11 +204,11 @@ function setLoadAnim() {
       $("#fullstop").addClass("fullstop");
       animState = true;
     }
-  },500);
+  },500) );
 }
 
-function unSetLoadAnim() {
-  clearTimeout(loadAnim);
+function unSetloadAnims() {
+  loadAnims.forEach(loadAnim => clearTimeout(loadAnim));
   $("#fullstop").removeClass("fullstop");
   animState = false;
 }
@@ -240,7 +240,7 @@ function colourise(imageData) {
       root.style.setProperty('--backgroundMain', colors.backgroundMain);
       root.style.setProperty('--backgroundOther', colors.backgroundOther);
       // $("#images-cont").css("display","none");
-      unSetLoadAnim();
+      unSetloadAnims();
       ReactDOM.render(<Swatches colors={colors}/>, document.getElementById('swatches-react'));
       $("#clear").css("visibility","visible");
       setTimeout(function(){
