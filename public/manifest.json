@@ -1,6 +1,7 @@
 {
   "short_name": "Splash.",
   "name": "Make a Splash",
+  "description": "Colourise this page with an image.",
   "icons": [
     {
       "src": "curv.png",
