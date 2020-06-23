@@ -5,8 +5,6 @@ exports.handler = async (event) => {
   let data = event.data.split(',');
   let imageType = data[0].split(';')[0].split(':')[1];
   let imageData = data[1];
-  console.log(imageType);
-  console.log(imageData);
   let response = {
     statusCode: 200
   };
