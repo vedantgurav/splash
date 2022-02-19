@@ -11,7 +11,6 @@ let startX = 0;
 let scrollLeft = 0;
 
 slider.addEventListener("mousedown", (e) => {
-    alert();
     isDown = true;
     slider.classList.add("active");
     startX = e.pageX - slider.offsetLeft;
