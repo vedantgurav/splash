@@ -21,7 +21,13 @@ export default function Content(props) {
                 <div className="col-md-12" id="heading">
                     <p style={{ color: colors.primary }}>
                         Splash
-                        <span style={{ color: colors.primary }} id="fullstop">
+                        <span
+                            style={{
+                                color: colors.primary,
+                                paddingRight: "10px",
+                            }}
+                            id="fullstop"
+                        >
                             .
                         </span>
                     </p>
